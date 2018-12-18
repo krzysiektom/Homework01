@@ -26,7 +26,7 @@ public class Main1 {
         }
     }
 
-    public static class Employee implements Comparable {
+    private static class Employee implements Comparable {
         private String lastName;
         private String firstName;
         private int salary;
@@ -37,11 +37,11 @@ public class Main1 {
             this.salary = salary;
         }
 
-        public String getLastName() {
+        String getLastName() {
             return lastName;
         }
 
-        public String getFirstName() {
+        String getFirstName() {
             return firstName;
         }
 
