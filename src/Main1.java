@@ -11,9 +11,10 @@ public class Main1 {
         try {
             for (String line : Files.readAllLines(path1)) {
                 if (!line.contains("Kowalski") && !line.contains("Kowalska") && line.contains("zł")) {
-                    employees.add(new Employee(line.substring(0, line.indexOf(",")),
-                            line.substring(line.indexOf(" ") + 1, line.indexOf(",", line.indexOf(",") + 1)),
-                            Integer.parseInt(line.substring(line.indexOf(" ", line.indexOf(" ") + 1) + 1, line.indexOf(".")))));
+                    String lastName = line.substring(0, line.indexOf(","));
+                    String firstName = line.substring(line.indexOf(" ") + 1, line.indexOf(",", line.indexOf(",") + 1));
+                    int salary = Integer.parseInt(line.substring(line.indexOf(" ", line.indexOf(" ") + 1) + 1, line.indexOf(".")));
+                    employees.add(new Employee(lastName, firstName, salary));
                 }
             }
         } catch (IOException e) {
